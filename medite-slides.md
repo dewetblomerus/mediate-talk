@@ -68,7 +68,6 @@ theme: default
 
 - Build stuff with other people. (obviously)
 - Build stuff by yourself.
-- You need to believe in your productivity.
 
 ---
 
