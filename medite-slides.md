@@ -7,212 +7,87 @@ theme: default
 
 <style>
   :root {
-    color: black;
-    background: white;
+    --color-fg-default: #FFFFFF;
+    --color-canvas-default: #252B31;
+    font-size: 50px;
   }
 
   h1, h2, h3 {
-    font-weight: 300;
-    color: black;
-  }
-
-  a {
-    color: black
-    font-weight: 200;
+    font-weight: 400;
+    color: white;
   }
 
   h1 {
-    text-align: center;
-    font-size: 60px;
+    font-size: 100px;
   }
 
   h2 {
-    font-size: 40px;
+    font-size: 80px;
   }
 
-  pre, code {
-    background-color: white;
-    color: black;
+  h3 {
+    font-size: 60px;
   }
 
+  section {
+    background-image: url(atldevcon-logo-white.png);
+    background-repeat: no-repeat;
+    background-position: bottom 20px right 20px;
+    background-size: 200px auto;
+  }
 </style>
 
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-# Building a Globally Distributed Router in Elixir
+# Building an Ai mediator
 
 ---
 
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
+# Who am I?
 
-## Why did we, and why might you need a router?
-
----
-
-## One server in europe and one server in the USA.
+- I am not an AI expert.
+- I am an expert at building things.
 
 ---
 
-![bg contain](https://f000.backblazeb2.com/file/elixirconf-23/1-1-dalle.png)
+# What did I build?
+
+- Problem discovery story.
+- Demo.
+- Where I left the project.
 
 ---
 
-![bg contain](https://f000.backblazeb2.com/file/elixirconf-23/2-1-dalle.png)
+### What did I learn about building generative text applications?
+
+- Use an API.
+- Send the entire context in each request.
+- Send a system prompt.
 
 ---
 
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/1-before-router.png)
+### What have I learned about building software.
+
+- Build stuff with other people. (obviously)
+- Build stuff by yourself.
+- You need to believe in your productivity.
 
 ---
 
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/2-with-router.png)
+### Choosing a stack of tools to build with
+
+You have three large pieces to choose
+
+1.  Present to user (web, mobile, hardware)
+1.  Logic (programming language or no/low-code platform)
+1.  Data Store (Database)
+
+- Maybe the last two bullets collapse into
+  a BaaS like Firebase or Supabase
 
 ---
 
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
+### Choosing a stack (continued)
 
-## Requirements
-
-- Can route a request to the correct region.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Requirements
-
-- Can route a request to the correct region.
-- Source of truth for unique email and to which team that email belongs.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Requirements
-
-- Can route a request to the correct region.
-- Source of truth for unique email and to which team that email belongs.
-- Fast Lookups for routing.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Approach
-
-<!-- 8m -->
-
-- Reverse Proxy.
-
----
-
-![](https://cf-assets.www.cloudflare.com/slt3lc6tev37/3msJRtqxDysQslvrKvEf8x/f7f54c9a2cad3e4586f58e8e0e305389/reverse_proxy_flow.png)
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Approach
-
-- Reverse Proxy.
-- Single Postgres database in one region, this solves uniqueness.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Approach
-
-- Reverse Proxy.
-- Single Postgres database in one region, this solves uniqueness.
-- ETS cache in all regions, transported by Kafka, this solves fast lookups.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Elixir Strengths
-
-<!-- 14m -->
-
-- Holding on to Connections
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Elixir Strengths
-
-- Holding on to Connections
-- Plug places the pit of success right in front of you.
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Falling in the pit of success, in our `router.ex` file.
-
-```elixir
-  pipeline :gandalf_proxy do
-    plug(RegionDataAdder)
-    plug(RegionAdder)
-    plug(Parser)
-    plug(Proxy)
-    plug(SamlNameIdComparer)
-    plug(Response)
-  end
-```
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Elixir Strengths
-
-- Holding on to Connections.
-- Plug places the pit of success right in front of you.
-- Adds minimal latency.
-
----
-
-![bg contain](https://f000.backblazeb2.com/file/elixirconf-23/Non-proxy-time-spent-in-Randalf.png)
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Pitfalls
-
-- Hop-by-hop headers
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Pitfalls
-
-- Hop-by-hop headers
-- Flexing how much we can do with very little resources
-
----
-
-![bg](https://f000.backblazeb2.com/file/elixirconf-23/template-%E2%80%8E001.jpeg)
-
-## Pitfalls
-
-- Hop-by-hop headers
-- Flexing how much we can do with very little resources
-- We could not cut any scope, and the project took longer than expected.
-
----
-
-## Now What?
-
-- Build a proxy, it will be easy.
-
----
-
-## Now What?
-
-- Build a proxy, it will be easy.
-- If you need to build a router, consider how many different types of requests you need to route.
+- Are you motivated to learn it?
+- Do you enjoy working with it?
+- Can you get paid doing it?
+- I chose Phoenix LiveView for side projects.
