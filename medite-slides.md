@@ -80,7 +80,7 @@ theme: default
 
 You have three large pieces to choose
 
-1.  Present to user (web, mobile, hardware)
+1.  Present to user (web, mobile, desktop, hardware)
 1.  Logic (programming language or no/low-code platform)
 1.  Data Store (Database)
 
