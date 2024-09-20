@@ -1,22 +1,12 @@
-Who am I
-- Introduction
-- I am not an expert at Ai
-- I am an expert at building things.
+Who am I (2 minutes)
 
 What did I build
-- Problem discovery story
-- Demo
-- Where I left the project
+- Discovery (2 minutes)
+- Demo (10 minutes)
 
 What did I learn about building generative text applications.
-- Use an API.
-- Send the entire context in each request.
-- Send a system prompt.
 
 What have I learned about building software.
-- Build stuff with other people. (obviously)
-- Build stuff by yourself.
-- You need to believe in your productivity.
 
 Choosing a stack
 - Have you heard of Rails?

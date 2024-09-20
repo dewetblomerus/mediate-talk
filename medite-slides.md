@@ -41,6 +41,10 @@ theme: default
 
 ---
 
+![bg cover](sponsors.jpg)
+
+---
+
 # Who am I?
 
 - I am not an AI expert.
@@ -52,7 +56,7 @@ theme: default
 
 - Problem discovery story.
 - Demo.
-- Where I left the project.
+- Where I paused the project.
 
 ---
 
@@ -61,6 +65,7 @@ theme: default
 - Use an API.
 - Send the entire context in each request.
 - Send a system prompt.
+- Plan to swap out your vendor.
 
 ---
 
