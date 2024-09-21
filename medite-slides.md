@@ -94,4 +94,11 @@ You have three large pieces to choose
 - Are you motivated to learn it?
 - Do you enjoy working with it?
 - Can you get paid doing it?
+- Do I have a community?
+
+---
+
+### My stack
+
 - I chose Phoenix LiveView for side projects.
+- Then I found a job doing it.
