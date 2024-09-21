@@ -82,19 +82,25 @@ You have three large pieces to choose
 
 1.  Present to user (web, mobile, desktop, hardware)
 1.  Logic (programming language or no/low-code platform)
-1.  Data Store (Database)
-
-- Maybe the last two bullets collapse into
-  a BaaS like Firebase or Supabase
+1.  Data Store (Database). Maybe collapse with previous bullet into a BaaS like Firebase or Supabase
 
 ---
 
 ### Choosing a stack (continued)
 
-- Are you motivated to learn it?
-- Do you enjoy working with it?
-- Can you get paid doing it?
-- Do I have a community?
+You have some small pieces to choose.
+
+1.  Distribution, hosting. PaaS is really compelling for side projects. I like Fly.io
+1.  Authentication/Authorization. Maybe separate bullets, maybe BaaS from previous slide.
+
+---
+
+### Choosing a stack (continued some more)
+
+- Am I motivated to learn it?
+- Do I enjoy working with it?
+- Can I get paid doing it?
+- Do I have or can I find a community?
 
 ---
 
@@ -102,3 +108,10 @@ You have three large pieces to choose
 
 - I chose Phoenix LiveView for side projects.
 - Then I found a job doing it.
+
+---
+
+### Now what?
+
+- Go build a side project
+- After you build one, cranking out one per year becomes less and less work.
