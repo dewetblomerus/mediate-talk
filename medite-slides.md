@@ -115,3 +115,5 @@ You have many small pieces to choose.
 
 - Go build a side project
 - After you build one, cranking out one per year becomes less and less work.
+
+https://github.com/dewetblomerus/mediate-talk/blob/main/slides.pdf
