@@ -88,10 +88,10 @@ You have three large pieces to choose
 
 ### Choosing a stack (continued)
 
-You have some small pieces to choose.
+You have many small pieces to choose.
 
-1.  Distribution, hosting. PaaS is really compelling for side projects. I like Fly.io
-1.  Authentication/Authorization. Maybe separate bullets, maybe BaaS from previous slide.
+- Distribution, hosting. PaaS is really compelling for side projects. I like Fly.io
+- Authentication/Authorization. Maybe separate bullets, maybe BaaS from previous slide.
 
 ---
 
